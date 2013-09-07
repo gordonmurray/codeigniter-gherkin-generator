@@ -30,11 +30,11 @@
     <?php endif; ?>
 
     <hr>
+    
     <?php echo anchor('welcome/export', '<i class="icon-download-alt"></i> Export', array('class' => 'btn btn-mini btn-info')); ?>
     <?php echo anchor('welcome/restart', '<i class="icon-trash"></i> Start over', array('class' => 'btn btn-mini btn-warning')); ?>
     <?php echo anchor('run', '<i class="icon-ok"></i> Run the test', array('class' => 'btn btn-mini btn-success')); ?>
     <?php echo anchor('#', '<i class="icon-time"></i> Schedule this test', array('class' => 'btn btn-mini btn-primary disabled')); ?>
-
 
 <?php else: ?>
     Start creating a test to generate a *.feature file to test, export or schedule for later

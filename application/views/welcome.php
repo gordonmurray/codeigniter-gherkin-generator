@@ -108,7 +108,7 @@
 
             <hr>
 
-            Developed by <?php echo anchor('http://murrion.com', 'Murrion Sofware'); ?> | <?php echo anchor('https://twitter.com/murrion', 'Follow me on Twitter'); ?>
+            Developed by <?php echo anchor('http://murrion.com', 'Murrion Sofware'); ?> | <?php echo anchor('https://twitter.com/murrion', 'Follow me on Twitter'); ?> | <?php echo anchor('https://github.com/murrion/codeigniter-gherkin-generator', 'Code available on Github'); ?>
 
         </div> 
 
