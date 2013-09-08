@@ -48,3 +48,9 @@ Scenario: <?php echo element('name', $scenario, 'untitled'); ?><br />
 
 <?php echo anchor('gherkin/export', '<i class="icon-download-alt"></i> Export', array('class' => 'btn btn-mini btn-info')); ?> 
 <?php echo anchor('gherkin/restart', '<i class="icon-trash"></i> Start over', array('class' => 'btn btn-mini btn-warning')); ?> 
+
+<?php if ((isset($scenario['url']) && $scenario['url'] != '') && (isset($scenario['results_array']) && !empty($scenario['results_array']))): ?>
+    <?php echo anchor('gherkin/run', '<i class="icon-play"></i> Run Test', array('class' => 'btn btn-mini btn-success')); ?> 
+<?php else: ?>
+    <?php echo anchor('#', '<i class="icon-play"></i> Run Test', array('class' => 'btn btn-mini btn-success disabled')); ?> 
+<?php endif; ?>

@@ -125,6 +125,42 @@ class Gherkin extends CI_Controller
         redirect('');
     }
 
+    /**
+     * Save the test to a feature file and run it
+     */
+    function run()
+    {
+        $this->load->helper('file');
+
+        $feature = $this->load->view('feature_export', '', TRUE);
+
+        $scenario = $this->session->userdata('scenario');
+
+        $url_array = parse_url(element('url', $scenario));
+
+        $host = str_replace(".", "_", $url_array['host']);
+
+        if ($host != '')
+        {
+            if (write_file('features/' . $host . '.feature', $feature))
+            {
+                //echo $host . '.feature saved<br />';
+
+                exec('bin/behat --format=html --out features/' . $host . '_tests.html features/' . $host . '.feature');
+
+                redirect(base_url() . 'features/' . $host . '_tests.html');
+            }
+            else
+            {
+                echo 'Unable to write the file<br />\n';
+            }
+        }
+        else
+        {
+            echo "Couldn\'t determine host name";
+        }
+    }
+
 }
 
 /* End of file gherkin.php */

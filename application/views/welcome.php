@@ -8,11 +8,10 @@
 
     <div class="well">
         <?php if (!$this->session->userdata('scenario')): ?>
-            <p class="lead">This is the beginning of a very basic tool to help to generate '<?php echo anchor('https://github.com/cucumber/cucumber/wiki/Gherkin', 'Gherkin'); ?>', a language to aid in software development and testing. Developed to work with <?php echo anchor('http://behat.org/', 'Behat'); ?>, a PHP BDD Framework.</p>
+            This is a tool to help to generate '<?php echo anchor('https://github.com/cucumber/cucumber/wiki/Gherkin', 'Gherkin'); ?>', a language to aid in software development and testing.
         <?php else: ?>
             <?php echo $this->load->view('feature_output'); ?>
         <?php endif; ?>
-
     </div>
 
     <div class="well">
@@ -61,10 +60,6 @@
 
     </div>
 
-    <hr>
 
-    Developed by <?php echo anchor('http://murrion.com', 'Murrion Sofware'); ?> | <?php echo anchor('https://twitter.com/murrion', 'Follow me on Twitter'); ?> | <?php echo anchor('https://github.com/murrion/codeigniter-gherkin-generator', 'Code available on Github'); ?>
 
-</div> 
-
-<?php $this->load->view('layout/footer'); ?>
+    <?php $this->load->view('layout/footer'); ?>
